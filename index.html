@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="countries.ico" type="image/png">
+  <title>Task Management - Login/Register</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Add opacity to the background image using a pseudo-element */
+    .bg-overlay {
+      position: relative;
+      z-index: 1;
+    }
+
+    .bg-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-xl font-bold">Task Manage</a>
+      <ul class="flex space-x-4">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="profile.html" class="hover:underline">Profile</a></li>
+        <!-- <li><a href="#" class="hover:underline">Contact</a></li> -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Body -->
+  <main 
+    class="flex-grow flex items-center justify-center bg-cover bg-center bg-no-repeat bg-overlay"
+    style="background-image: url('/images/default/sunset.webp');"
+  >
+    <div class="container mx-auto flex flex-col items-end gap-3 justify-end space-x-6 p-8">
+      <!-- Welcome Section -->
+      <section class="w-full lg:w-1/3 text-left text-white bg-black bg-opacity-60 p-6 rounded-lg shadow-md">
+        <h1 class="text-3xl lg:text-4xl font-bold text-blue-300 mb-4">Welcome to Task Manage</h1>
+        <p class="text-base lg:text-lg mb-4">Your one-stop solution for managing tasks and staying organized. Whether it's personal projects or team assignments, we've got you covered.</p>
+        <p class="text-lg lg:text-xl">Sign in to get started or create an account.</p>
+      </section>
+
+      <!-- Login/Register Forms -->
+      <div class="w-full lg:w-1/3 bg-white bg-opacity-80 p-6 rounded shadow-md">
+        <!-- Login Form -->
+        <form id="login-form" class="space-y-6">
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">Login</h2>
+          <div>
+            <label for="login-email" class="block mb-1 text-gray-800">Email</label>
+            <input type="email" id="login-email" name="email" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label for="login-password" class="block mb-1 text-gray-800">Password</label>
+            <input type="password" id="login-password" name="password" class="w-full p-2 border rounded" required>
+          </div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Login</button>
+          <p class="text-center text-sm mt-4 text-gray-800">
+            Don't have an account? 
+            <a href="#" id="show-register" class="text-blue-600 hover:underline">Register here</a>
+          </p>
+        </form>
+
+        <!-- Register Form -->
+        <form id="register-form" class="space-y-6 hidden">
+          <h2 class="text-2xl font-bold mb-4 text-gray-800">Register</h2>
+          <div>
+            <label for="register-name" class="block mb-1 text-gray-800">Name</label>
+            <input type="text" id="register-name" name="name" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label for="register-email" class="block mb-1 text-gray-800">Email</label>
+            <input type="email" id="register-email" name="email" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label for="register-password" class="block mb-1 text-gray-800">Password</label>
+            <input type="password" id="register-password" name="password" class="w-full p-2 border rounded" required>
+          </div>
+          <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Register</button>
+          <p class="text-center text-sm mt-4 text-gray-800">
+            Already have an account? 
+            <a href="#" id="show-login" class="text-green-600 hover:underline">Login here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2024 Task Management. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
