@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("type", "profilepic");
 
         // Make the API call
-        const response = await fetch("http://localhost/TASK/api/profilepic.php", {
+        const response = await fetch("https://scrud.free.nf/Task/api/profilepic.php", {
           method: "POST",
           body: formData,
         });
