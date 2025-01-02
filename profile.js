@@ -11,7 +11,7 @@ async function fetchUserProfile() {
     return;
   }
   console.log("Token:", token); // Debugging log
-  const url = "https://scrud.free.nf/Task/api/get_user_info.php";
+  const url = "https://task.42web.io/api/get_user_info.php";
 
   try {
     const response = await fetch(url, {
@@ -172,7 +172,7 @@ async function updateTask(taskID) {
   const status = document.getElementById("task-status").value;
 
   // const token = localStorage.getItem("token");
-  const url = `https://scrud.free.nf/Task/api/task-update.php`;
+  const url = `https://task.42web.io/api/task-update.php`;
 
   try {
     const response = await fetch(url, {
@@ -225,7 +225,7 @@ document.getElementById("task-form").addEventListener("submit", async (e) => {
   }
 
   try {
-    const response = await fetch("https://scrud.free.nf/Task/api/task-add.php", {
+    const response = await fetch("https://task.42web.io/api/task-add.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userID, Title: addTitle, Desc: addDesc, Priority: addPriority, Date: addDate }), 
@@ -252,7 +252,7 @@ document.getElementById("task-form").addEventListener("submit", async (e) => {
 
 async function updateTaskStatus(taskID) {
   try {
-    const response = await fetch("https://scrud.free.nf/Task/api/task-update.php", {
+    const response = await fetch("https://task.42web.io/api/task-update.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type: 'status', taskID }), // Include type alongside taskID
@@ -277,7 +277,7 @@ async function updateTaskStatus(taskID) {
 
 async function deleteTask(taskID) {
   try {
-    const response = await fetch("https://scrud.free.nf/Task/api/task-update.php", {
+    const response = await fetch("https://task.42web.io/api/task-update.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type: 'delete', taskID }), // Include type alongside taskID

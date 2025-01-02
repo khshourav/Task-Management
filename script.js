@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value;
 
         try {
-          const response = await fetch("https://scrud.free.nf/Task/api/register.php", {
+          const response = await fetch("https://task.42web.io/api/register.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, email, password }),
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value;
 
         try {
-          const response = await fetch("https://scrud.free.nf/Task/api/login.php", {
+          const response = await fetch("https://task.42web.io/api/login.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
